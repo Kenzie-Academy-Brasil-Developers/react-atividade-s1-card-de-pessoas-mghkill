@@ -1,29 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-import Developer from './components/Developer';
-import Student from './components/Student/Student';
+import "./App.css";
+import Developer from "./components/Developer";
 function App() {
-
-  const objStudant = {
-
-    name: "Paulo", 
-    age: 25, 
-    country: 'USA'
-
-  }
-  const objDeveloper ={
-    
-    name: "Filipe", 
-    age: 16, 
-    country: "Brasil"
-  
-  }
+  const objDeveloper = [
+    {
+      name: "Gabriel",
+      age: 19,
+      country: "Brasil",
+    },
+    {
+      name: "Filipe",
+      age: 28,
+      country: "Brasil",
+    },
+    {
+      name: "Mariana",
+      age: 24,
+      country: "Itália",
+    },
+  ];
 
   return (
     <div className="App">
       <header className="App-header">
-       <Developer name={objDeveloper.name} age={objDeveloper.age} country={objDeveloper.country}/>
-       <Student name={objStudant.name} age={objStudant.age} country={objStudant.country}/>
+        {objDeveloper.map((e) => (
+          <div>
+            <Developer name={e.name} age={e.age} country={e.country} />
+          </div>
+        ))}
       </header>
     </div>
   );
